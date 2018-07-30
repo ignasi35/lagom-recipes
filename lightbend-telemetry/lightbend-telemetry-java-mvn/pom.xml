@@ -18,6 +18,19 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>com.lightbend.rp</groupId>
+                    <artifactId>reactive-app-maven-plugin</artifactId>
+                    <version>0.3.0</version>
+                    <executions>
+                        <execution>
+                            <id>build-docker</id>
+                            <goals>
+                                <goal>build</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
                     <version>3.1.1</version>
@@ -124,6 +137,21 @@
                 <groupId>com.lightbend.cinnamon</groupId>
                 <artifactId>cinnamon-lagom_${scala.binary.version}</artifactId>
                 <version>${cinnamon.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lightbend.rp</groupId>
+                <artifactId>reactive-lib-service-discovery-lagom14-java_2.12</artifactId>
+                <version>0.8.1</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lightbend.rp</groupId>
+                <artifactId>reactive-lib-akka-cluster-bootstrap_2.12</artifactId>
+                <version>0.8.1</version>
+            </dependency>
+            <dependency>
+                <groupId>com.lightbend.lagom</groupId>
+                <artifactId>api-tools_2.12</artifactId>
+                <version>${lagom.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
